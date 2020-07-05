@@ -12,12 +12,17 @@ btns.forEach((btn) =>
     const classList = event.currentTarget.classList;
     if (classList.contains("dec")) {
       count--;
-    }
-    if (classList.contains("inc")) {
+    } else if (classList.contains("inc")) {
       count++;
-    }
-    if (classList.contains("reset")) {
+    } else if (classList.contains("reset")) {
       count = 0;
+    }
+    if (count > 0) {
+      counter.style.color = "green";
+    } else if (count < 0) {
+      counter.style.color = "red";
+    } else {
+      counter.style.color = "black";
     }
     counter.textContent = count;
   })
